@@ -1,0 +1,23 @@
+#!/usr/bin/env node
+
+const http = require('http');
+
+const logger = require('../src/libs/logger')('www');
+const app = require('../src/app');
+const initSocket = require('../src/socket');
+
+const port = Number(process.env.PORT || '3000');
+const server = http.createServer(app);
+
+app.set('port', port);
+initSocket(server);
+server.listen(port);
+
+server.on('error', error => {
+    logger.error(error.code);
+    process.exit(1);
+});
+
+server.on('listening', () => {
+    logger.log(`Listening on ${port} port`);
+});

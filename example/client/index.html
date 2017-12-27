@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#000000">
+  <style>.chat-button{-webkit-box-sizing:border-box;box-sizing:border-box;padding:10px 20px;-webkit-transition-duration:.4s;-o-transition-duration:.4s;transition-duration:.4s;border:1px solid #87cefa;border-radius:3px}.chat-button:hover{cursor:pointer;background-color:#87cefa}.chat-input{display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between;width:100%}.chat-input>input{font-size:16px;-webkit-box-sizing:border-box;box-sizing:border-box;padding-left:10px;outline:none}.chat-message{display:-ms-flexbox;display:flex;-ms-flex-pack:start;justify-content:flex-start;width:100%;margin:10px 0}.chat-message_my{-ms-flex-direction:row-reverse;flex-direction:row-reverse}.chat-message__username{font-size:13px;font-weight:400;color:#3a6d99}.chat-message_my .chat-message__username{display:none}.chat-message__content{font-size:15px;width:50%;padding:7px 10px;text-align:left;word-wrap:break-word;border-radius:3px;background:#f1f1f1}.chat-message_my .chat-message__content{background:#e4ecf2}.chat{width:300px;padding:0 20px}.chat__messages{overflow-y:scroll;height:400px;margin-bottom:20px}.chat__buttons{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-top:-5px;padding-top:10px}.chat__buttons>.chat-button{margin-top:5px;margin-right:8px}.chat__slug{margin-bottom:20px;text-align:center}body{margin:0;padding:0;font-family:sans-serif}</style>
+  <title>Web chat</title>
+</head>
+<body>
+<div id="chat"></div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+<script src="bot-chat.js"></script>
+<script>
+    var cookie = Cookies.get('chat-io-cookie');
+
+    if (!cookie) {
+        cookie = Math.random().toString(36).substring(7);
+        Cookies.set('chat-io-cookie', cookie);
+    }
+
+    makeChat('chat', 'localhost:3000', {namespace: 'group', token: cookie});
+</script>
+</html>

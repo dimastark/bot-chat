@@ -1,0 +1,17 @@
+.dropzone,
+.dropzone_pending
+{
+    width: 40px;
+    height: 40px;
+
+    background: url("./camera.png") no-repeat 50% 60%;
+    background-size: 25px 25px;
+
+    cursor: pointer;
+}
+
+.dropzone_pending
+{
+    background: url("./loading.gif") no-repeat 50% 50%;
+    background-size: 75% 75%;
+}

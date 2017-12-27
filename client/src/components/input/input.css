@@ -1,0 +1,17 @@
+.chat-input
+{
+    display: flex;
+    justify-content: space-between;
+
+    width: 100%;
+}
+
+.chat-input > input
+{
+    font-size: 16px;
+
+    box-sizing: border-box;
+    padding-left: 10px;
+
+    outline: none;
+}

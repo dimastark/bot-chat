@@ -1,0 +1,18 @@
+.chat-button
+{
+    box-sizing: border-box;
+    padding: 10px 20px;
+
+    -webkit-transition-duration: .4s;
+            transition-duration: .4s;
+
+    border: 1px solid #87cefa;
+    border-radius: 3px;
+}
+
+.chat-button:hover
+{
+    cursor: pointer;
+
+    background-color: #87cefa;
+}
